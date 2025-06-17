@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import { fontFamily } from "tailwindcss/defaultTheme";
 
 export default {
 	darkMode: ["class"],
@@ -54,20 +55,27 @@ export default {
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
-				}
+					foreground: 'hsl(var(--sidebar-foreground))'
+				},
+        // Direct colors from PRD
+        primaryText: '#1A202C',
+        secondaryText: '#718096',
+        accentSecondary: '#F59E0B', // PRD: accentSecondary
+        success: '#22C55E', // PRD: success
+        error: '#EF4444', // PRD: error (can also use 'destructive' for this)
+        // PRD colors mapped via CSS variables above:
+        // pageBackground: '#F8FAFC', (mapped to 'background')
+        // surface: '#FFFFFF', (mapped to 'card', 'popover')
+        // explicitBorder: '#E2E8F0', (mapped to 'border')
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
 			},
+      fontFamily: {
+        sans: ["var(--font-sans)", ...fontFamily.sans],
+      },
 			keyframes: {
 				'accordion-down': {
 					from: {
